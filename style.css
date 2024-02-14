@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@100..900&display=swap");
+
+:root {
+  --dark: #112d4e;
+  --blue: #3f72af;
+  --light: #dbe2ef;
+  --white: #f9f7f7;
+}
+
+* {
+  box-sizing: border-box;
+  direction: rtl;
+  font-family: "Noto Sans Hebrew", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body > .container {
+  height: 100%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  background: var(--dark);
+  display: flex;
+  margin: 0;
+  padding: 50px;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.top .pfp {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: var(--light);
+  background-image: url(./pfp.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.top .text {
+  color: var(--white);
+  padding: 0 30px;
+}
+
+.top .name {
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.top .title {
+  font-weight: 700;
+  font-size: 1.4em;
+  margin: -2px 0 10px 0;
+}
+
+.top .description {
+  font-weight: 200;
+  font-size: 1.2em;
+}
+
+.bottom {
+  background: var(--white);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom .container {
+  border-bottom: 1px solid var(--dark);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 40px;
+}
+
+.bottom .title {
+  font-weight: 400;
+  font-size: 1.2em;
+  color: var(--dark);
+}
+
+.bottom .container:first-child .description {
+  direction: ltr;
+  text-align: end;
+}
+
+.bottom .description {
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 1.4em;
+}
+
+@media only screen and (min-width: 700px) {
+  body {
+    justify-content: center;
+    background: linear-gradient(
+      60deg,
+      rgb(17, 16, 77) 50%,
+      rgb(31, 44, 102) 50% 100%
+    );
+  }
+
+  body > .container {
+    height: 400px;
+    width: 700px;
+    flex-direction: row;
+  }
+
+  .top {
+    padding: 0;
+    justify-content: center;
+    gap: 5px;
+    width: 50%;
+  }
+
+  .top .pfp {
+    height: 120px;
+    width: 120px;
+  }
+
+  .top .name {
+    font-weight: 700;
+    font-size: 1em;
+  }
+
+  .top .title {
+    font-weight: 700;
+    font-size: 1.4em;
+    margin: -2px 0 10px 0;
+  }
+
+  .top .description {
+    font-weight: 200;
+    font-size: 1.2em;
+  }
+
+  .bottom {
+    width: 50%;
+  }
+
+  .bottom .container {
+    border: 1px solid var(--dark);
+  }
+
+  .bottom .container:nth-child(2) {
+    border-top: none;
+    border-bottom: none;
+  }
+}
