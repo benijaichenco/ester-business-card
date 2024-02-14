@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@100..900&display=swap");
 
 :root {
-  --dark: #112d4e;
-  --blue: #3f72af;
-  --light: #dbe2ef;
-  --white: #f9f7f7;
+  --light: #b6b6b6;
+  --white: #fafafa;
 }
 
 * {
@@ -24,76 +22,86 @@ body {
 }
 
 body > .container {
+  background: red; /* <-- delete this when done */
   height: 100%;
-  min-width: 300px;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .top {
-  background: var(--dark);
+  background: var(--white);
+  flex-basis: 0;
+}
+
+.profile {
   display: flex;
-  margin: 0;
-  padding: 50px;
+  flex-direction: row-reverse;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  flex-direction: column;
-  text-align: center;
+  padding: 10px 15px 0 15px;
+  min-width: 352px;
 }
 
-.top .pfp {
-  height: 200px;
-  width: 200px;
+.profile .pfp {
+  height: 90px;
+  width: 90px;
   border-radius: 50%;
-  background: var(--light);
-  background-image: url(./pfp.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url(./pfp.jpeg) center -35px / cover no-repeat;
 }
 
-.top .text {
-  color: var(--white);
-  padding: 0 30px;
-}
-
-.top .name {
-  font-weight: 700;
-  font-size: 2em;
-}
-
-.top .title {
+.profile .name {
   font-weight: 700;
   font-size: 1.4em;
-  margin: -2px 0 10px 0;
+  color: rgb(65, 65, 65);
+}
+
+.profile .title {
+  font-weight: 500;
+  font-size: 1.25em;
+  color: rgb(82, 82, 82);
 }
 
 .top .description {
-  font-weight: 200;
-  font-size: 1.2em;
+  position: relative;
+  font-weight: 300;
+  font-size: 1em;
+  padding: 0 15px;
+  margin: 20px 0;
+  color: rgb(87, 87, 87);
+}
+
+.top .description::before {
+  position: absolute;
+  content: "";
+  width: 55%;
+  top: -30%;
+  border-top: 1px solid rgb(126, 126, 126);
 }
 
 .bottom {
+  position: relative;
   background: var(--white);
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  padding: 0 15px;
 }
 
 .bottom .container {
-  border-bottom: 1px solid var(--dark);
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-  padding: 20px 40px;
+  border-top: 1px solid rgb(126, 126, 126);
+  padding: 15px 0;
 }
 
 .bottom .title {
-  font-weight: 400;
+  margin-bottom: 3px;
+  font-size: 1.1em;
+  color: rgb(87, 87, 87);
+  font-weight: 600;
+}
+
+.bottom .description {
   font-size: 1.2em;
-  color: var(--dark);
+  font-weight: 700;
+  color: rgb(65, 65, 65);
 }
 
 .bottom .container:first-child .description {
@@ -101,66 +109,5 @@ body > .container {
   text-align: end;
 }
 
-.bottom .description {
-  color: var(--dark);
-  font-weight: 600;
-  font-size: 1.4em;
-}
-
 @media only screen and (min-width: 700px) {
-  body {
-    justify-content: center;
-    background: linear-gradient(
-      60deg,
-      rgb(17, 16, 77) 50%,
-      rgb(31, 44, 102) 50% 100%
-    );
-  }
-
-  body > .container {
-    height: 400px;
-    width: 700px;
-    flex-direction: row;
-  }
-
-  .top {
-    padding: 0;
-    justify-content: center;
-    gap: 5px;
-    width: 50%;
-  }
-
-  .top .pfp {
-    height: 120px;
-    width: 120px;
-  }
-
-  .top .name {
-    font-weight: 700;
-    font-size: 1em;
-  }
-
-  .top .title {
-    font-weight: 700;
-    font-size: 1.4em;
-    margin: -2px 0 10px 0;
-  }
-
-  .top .description {
-    font-weight: 200;
-    font-size: 1.2em;
-  }
-
-  .bottom {
-    width: 50%;
-  }
-
-  .bottom .container {
-    border: 1px solid var(--dark);
-  }
-
-  .bottom .container:nth-child(2) {
-    border-top: none;
-    border-bottom: none;
-  }
 }
