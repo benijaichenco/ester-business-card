@@ -7,7 +7,8 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  padding: 20px;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,13 +17,13 @@ body {
 
 .container {
   position: relative;
-  margin: 0 10px;
-  padding: 20px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 700px;
+  gap: 30px;
+  padding: 20px;
+  height: 600px;
   width: 400px;
   background: rgb(231, 231, 231);
   overflow: hidden;
@@ -31,34 +32,40 @@ body {
     -7px -7px 10px 0 rgba(255, 255, 255, 0.781);
 }
 
+.profile,
+.description,
+.details {
+  flex: 1;
+}
+
 .pfp {
-  box-shadow: 5px 5px 7px 0 rgba(190, 190, 190, 0.637),
-    -5px -5px 7px 0 rgba(255, 255, 255, 0.877);
+  box-shadow: inset -3px -3px 5px 0 rgba(255, 255, 255, 0.897),
+    inset 3px 3px 5px 0 rgb(129, 129, 129);
   margin: 0 auto;
-  height: 120px;
-  width: 120px;
+  height: 110px;
+  width: 110px;
   border-radius: 50%;
-  background: url(./pfp.png) center -30px / 140% no-repeat;
+  background: url(./pfp.png) center -21px / 130% no-repeat transparent;
 }
 
 .name {
   text-shadow: -1px -1px 2px rgb(94, 94, 94), 1px 1px 2px rgb(255, 255, 255);
-  width: 100%;
   text-align: center;
-  margin: 10px auto -5px auto;
+  margin: 3px auto 0 auto;
   color: rgb(206, 206, 206);
-  font-size: 3.5rem;
+  font-size: 2rem;
   letter-spacing: 2px;
   font-weight: 400;
 }
 
 .title {
   direction: rtl;
-  text-shadow: -1px -1px 2px rgb(94, 94, 94), 1px 1px 2px rgb(255, 255, 255);
+  text-shadow: -1px -1px 1px rgb(94, 94, 94), 1px 1px 1px rgb(255, 255, 255);
   width: 100%;
+  margin-top: -5px;
   text-align: center;
   color: rgb(206, 206, 206);
-  font-size: 2.6rem;
+  font-size: 1.5rem;
   letter-spacing: 2px;
   font-weight: 300;
 }
@@ -67,66 +74,172 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   gap: 10px;
   text-shadow: -1px -1px 1px rgb(94, 94, 94), 1px 1px 1px rgb(255, 255, 255);
   text-align: center;
   color: rgb(206, 206, 206);
-  font-size: 2rem;
+  font-size: 1.2rem;
   letter-spacing: 2px;
   font-weight: 300;
   text-align: center;
+}
+
+.description::before,
+.description::after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 1px;
+  border-radius: 1px;
+  background: rgb(206, 206, 206);
+  box-shadow: 1px 1px 1px 0 rgb(255, 255, 255),
+    -1px -1px 1px 0 rgba(119, 119, 119, 0.801);
+}
+
+.description::before {
+  top: -14px;
+}
+.description::after {
+  bottom: -15px;
+}
+
+.first,
+.second,
+.third {
+  position: relative;
+}
+
+.first::before,
+.first::after,
+.second::before,
+.second::after,
+.third::before,
+.third::after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px 0 rgb(255, 255, 255),
+    -1px -1px 1px 0 rgba(119, 119, 119, 0.801);
+  background: rgb(206, 206, 206);
+}
+
+.first::before {
+  left: 55px;
+  top: 11px;
+}
+.first::after {
+  right: 55px;
+  top: 11px;
+}
+
+.second::before {
+  left: 17px;
+  top: 11px;
+}
+.second::after {
+  right: 17px;
+  top: 11px;
+}
+
+.third::before {
+  left: 10px;
+  top: 12px;
+}
+.third::after {
+  right: 10px;
+  top: 12px;
 }
 
 .details {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-}
-
-.description::before,
-.description::after {
-  left: 50%;
-  transform: translateX(-50%);
-  content: "";
-  position: absolute;
-  height: 3px;
-  width: 70%;
-  border-radius: 1px;
-  box-shadow: inset 1px 1px 1px 0 rgba(148, 148, 148, 0.842),
-    inset -1px -1px 1px 0 rgb(255, 255, 255);
-  background-color: rgb(206, 206, 206);
-}
-.description::before {
-  top: -15px;
-}
-.description::after {
-  bottom: -15px;
+  justify-content: space-evenly;
+  gap: 5px;
+  text-align: center;
 }
 
 .phone,
 .location {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 3px;
   width: 100%;
 }
 
-.material-icons {
+.material-icons,
+.text {
   color: rgb(206, 206, 206);
   text-shadow: -1px -1px 1px rgb(94, 94, 94), 1px 1px 1px rgb(255, 255, 255);
-  font-size: 3.5rem;
-}
-
-.details .text {
-  color: rgb(206, 206, 206);
-  text-shadow: -1px -1px 1px rgb(94, 94, 94), 1px 1px 1px rgb(255, 255, 255);
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   font-weight: 400;
   letter-spacing: 2px;
-  text-decoration: none;
+}
+
+.text {
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    width: 300px;
+  }
+
+  .pfp {
+    height: 100px;
+    width: 100px;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .first::before {
+    left: 24px;
+    top: 9px;
+  }
+  .first::after {
+    right: 24px;
+    top: 9px;
+  }
+
+  .second::before {
+    left: -10px;
+    top: 10px;
+  }
+  .second::after {
+    right: -10px;
+    top: 10px;
+  }
+
+  .third::before {
+    left: 32px;
+    top: 10px;
+  }
+  .third::after {
+    right: 32px;
+    top: 10px;
+  }
+
+  .material-icons {
+    font-size: 1.6rem;
+  }
+  .details .text {
+    font-size: 1.1rem;
+  }
 }
