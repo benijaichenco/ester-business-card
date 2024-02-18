@@ -15,11 +15,15 @@ body {
 }
 
 .container {
+  position: relative;
+  margin: 0 10px;
+  padding: 20px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  position: relative;
-  height: 550px;
-  width: 320px;
+  justify-content: space-between;
+  height: 700px;
+  width: 400px;
   background: rgb(231, 231, 231);
   overflow: hidden;
   border-radius: 15px;
@@ -28,94 +32,49 @@ body {
 }
 
 .pfp {
-  box-shadow: 3px 3px 5px 0 rgba(190, 190, 190, 0.637),
-    -3px -3px 5px 0 rgba(255, 255, 255, 0.877);
-  margin: 20px auto 10px auto;
-  height: 100px;
-  width: 100px;
+  box-shadow: 5px 5px 7px 0 rgba(190, 190, 190, 0.637),
+    -5px -5px 7px 0 rgba(255, 255, 255, 0.877);
+  margin: 0 auto;
+  height: 120px;
+  width: 120px;
   border-radius: 50%;
-  background: url(./pfp.jpeg) center -40px / 100%;
+  background: url(./pfp.png) center -30px / 140% no-repeat;
 }
 
 .name {
-  text-shadow: -0.5px -0.5px 1px rgb(94, 94, 94),
-    0.5px 0.5px 1px rgb(255, 255, 255);
+  text-shadow: -1px -1px 2px rgb(94, 94, 94), 1px 1px 2px rgb(255, 255, 255);
   width: 100%;
   text-align: center;
-  margin: 0 auto;
-  color: rgb(180, 180, 180);
-  font-size: 1.5em;
-  letter-spacing: 1px;
-  font-weight: 700;
+  margin: 10px auto -5px auto;
+  color: rgb(206, 206, 206);
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
 .title {
   direction: rtl;
-  text-shadow: -0.5px -0.5px 1px rgb(94, 94, 94),
-    0.5px 0.5px 1px rgb(255, 255, 255);
+  text-shadow: -1px -1px 2px rgb(94, 94, 94), 1px 1px 2px rgb(255, 255, 255);
   width: 100%;
   text-align: center;
-  margin: -5px 0 0 0;
-  color: rgb(175, 175, 175);
-  font-size: 1.3em;
-  letter-spacing: 1px;
-  font-weight: 400;
+  color: rgb(206, 206, 206);
+  font-size: 2.6rem;
+  letter-spacing: 2px;
+  font-weight: 300;
 }
 
 .description {
   position: relative;
-  margin: 10px 20px;
-  text-shadow: -0.5px -0.5px 0.5px rgba(17, 17, 17, 0.493),
-    0.5px 0.5px 0.5px rgba(255, 255, 255, 0.788);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-shadow: -1px -1px 1px rgb(94, 94, 94), 1px 1px 1px rgb(255, 255, 255);
   text-align: center;
-  color: rgb(180, 180, 180);
-  font-size: 1em;
-  letter-spacing: 1px;
+  color: rgb(206, 206, 206);
+  font-size: 2rem;
+  letter-spacing: 2px;
   font-weight: 300;
   text-align: center;
-}
-
-.description::after,
-.description::before {
-  content: "";
-  position: absolute;
-  height: 1px;
-  border-radius: 1px;
-  box-shadow: inset 0.5px 0.5px 1px 0 rgba(148, 148, 148, 0.842),
-    inset -0.5px -0.5px 1px 0 rgb(255, 255, 255);
-}
-
-.first.description::before {
-  width: 19%;
-  top: 40%;
-  left: -15px;
-}
-.first.description::after {
-  width: 19%;
-  top: 40%;
-  right: -15px;
-}
-
-.second.description::before {
-  width: 15%;
-  left: -15px;
-  top: 23%;
-}
-.second.description::after {
-  width: 15%;
-  right: -15px;
-  top: 23%;
-}
-
-.third.description::before {
-  width: 5%;
-  left: -15px;
-  top: 23%;
-}
-.third.description::after {
-  width: 5%;
-  right: -15px;
-  top: 23%;
 }
 
 .details {
@@ -124,41 +83,49 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  margin-top: 40px;
+  gap: 15px;
 }
 
-.details::before {
+.description::before,
+.description::after {
+  left: 50%;
+  transform: translateX(-50%);
   content: "";
   position: absolute;
-  height: 1px;
-  top: -20%;
-  width: 100%;
+  height: 3px;
+  width: 70%;
   border-radius: 1px;
-  box-shadow: inset 0.5px 0.5px 1px 0 rgba(148, 148, 148, 0.842),
-    inset -0.5px -0.5px 1px 0 rgb(255, 255, 255);
+  box-shadow: inset 1px 1px 1px 0 rgba(148, 148, 148, 0.842),
+    inset -1px -1px 1px 0 rgb(255, 255, 255);
+  background-color: rgb(206, 206, 206);
+}
+.description::before {
+  top: -15px;
+}
+.description::after {
+  bottom: -15px;
 }
 
 .phone,
 .location {
-  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 13px;
+  gap: 3px;
+  width: 100%;
 }
 
 .material-icons {
-  color: rgb(214, 214, 214);
-  filter: drop-shadow(-0.5px -0.5px 0.5px rgb(114, 114, 114))
-    drop-shadow(0.5px 0.5px 0.5px rgb(255, 255, 255));
+  color: rgb(206, 206, 206);
+  text-shadow: -1px -1px 1px rgb(94, 94, 94), 1px 1px 1px rgb(255, 255, 255);
+  font-size: 3.5rem;
 }
 
 .details .text {
-  color: rgb(168, 168, 168);
-  text-shadow: -0.5px -0.5px 1px rgb(94, 94, 94),
-    0.5px 0.5px 1px rgb(255, 255, 255);
-  font-size: 1.3em;
-  font-weight: 200;
+  color: rgb(206, 206, 206);
+  text-shadow: -1px -1px 1px rgb(94, 94, 94), 1px 1px 1px rgb(255, 255, 255);
+  font-size: 2.3rem;
+  font-weight: 400;
+  letter-spacing: 2px;
 }
