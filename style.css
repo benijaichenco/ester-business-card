@@ -92,7 +92,7 @@ body {
   margin: 8px 0;
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 500px) {
   .container {
     border-radius: 20px;
     max-width: 400px;
