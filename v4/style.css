@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@100..900&display=swap");
+
+:root {
+  --light: #f0e7da;
+  --dark: #a57355;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Noto Serif Hebrew", serif;
+}
+
+body {
+  background: linear-gradient(to top right, #c5b59f 50%, #886b59 50%) no-repeat;
+  margin: 0;
+  min-width: 355px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  flex: 1;
+  background: var(--light);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  flex: 0 0 190px;
+}
+
+.pfp {
+  height: 110px;
+  width: 110px;
+  background: url(./pfp.png) center -30px / 140% no-repeat;
+  border-radius: 50%;
+  margin: 12px auto;
+}
+
+.name {
+  text-align: center;
+  color: var(--dark);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.middle {
+  flex: 0 0 130px;
+  background: var(--dark);
+  padding: 10px 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+.location,
+.phone,
+.email {
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+  color: var(--light);
+}
+
+.bottom {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.title {
+  direction: rtl;
+  margin: 40px 0;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+.description {
+  margin: 0;
+  color: var(--dark);
+  direction: rtl;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.description li {
+  margin: 8px 0;
+}
+
+@media only screen and (min-width: 500px) {
+  .container {
+    border-radius: 20px;
+    max-width: 400px;
+    height: 650px;
+  }
+}
