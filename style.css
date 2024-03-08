@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@100..900&display=swap");
 
+:root {
+  --bg: rgb(212, 204, 182);
+  --main: rgb(172, 162, 137);
+  --shadow-light: rgb(235, 224, 197);
+  --shadow-dark: rgba(43, 43, 43, 0.171);
+}
+
 * {
   box-sizing: border-box;
   font-family: "Noto Sans Hebrew", sans-serif;
@@ -12,7 +19,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(231, 231, 231);
+  background: var(--bg);
 }
 
 .container {
@@ -25,11 +32,11 @@ body {
   padding: 20px;
   height: 600px;
   width: 400px;
-  background: rgb(231, 231, 231);
+  background: var(--bg);
   overflow: hidden;
   border-radius: 15px;
-  box-shadow: 10px 10px 20px 0 rgba(190, 190, 190, 0.637),
-    -7px -7px 10px 0 rgba(255, 255, 255, 0.781);
+  box-shadow: 10px 10px 20px 0 var(--shadow-dark),
+    -10px -10px 20px 0 var(--shadow-light);
 }
 
 .profile,
@@ -39,8 +46,8 @@ body {
 }
 
 .pfp {
-  box-shadow: inset -3px -3px 5px 0 rgba(255, 255, 255, 0.897),
-    inset 3px 3px 5px 0 rgb(129, 129, 129);
+  box-shadow: inset -3px -3px 5px 0 var(--shadow-light),
+    inset 3px 3px 5px 0 var(--shadow-dark);
   margin: 0 auto;
   height: 110px;
   width: 110px;
@@ -49,10 +56,10 @@ body {
 }
 
 .name {
-  text-shadow: -1px -1px 2px rgb(94, 94, 94), 1px 1px 2px rgb(255, 255, 255);
+  text-shadow: -1px -1px 2px var(--shadow-dark), 1px 1px 2px var(--shadow-light);
   text-align: center;
   margin: 3px auto 0 auto;
-  color: rgb(206, 206, 206);
+  color: var(--main);
   font-size: 2rem;
   letter-spacing: 2px;
   font-weight: 400;
@@ -60,14 +67,14 @@ body {
 
 .title {
   direction: rtl;
-  text-shadow: -1px -1px 1px rgb(94, 94, 94), 1px 1px 1px rgb(255, 255, 255);
+  text-shadow: -1px -1px 1px var(--shadow-dark), 1px 1px 1px var(--shadow-light);
   width: 100%;
   margin-top: -5px;
   text-align: center;
-  color: rgb(206, 206, 206);
+  color: var(--main);
   font-size: 1.5rem;
   letter-spacing: 2px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .description {
@@ -76,12 +83,12 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   gap: 10px;
-  text-shadow: -1px -1px 1px rgb(94, 94, 94), 1px 1px 1px rgb(255, 255, 255);
+  text-shadow: -1px -1px 1px var(--shadow-dark), 1px 1px 1px var(--shadow-light);
   text-align: center;
-  color: rgb(206, 206, 206);
+  color: var(--main);
   font-size: 1.2rem;
   letter-spacing: 2px;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -92,19 +99,18 @@ body {
   left: 50%;
   transform: translateX(-50%);
   height: 1px;
+  width: 100%;
   border-radius: 1px;
-  background: rgb(206, 206, 206);
-  box-shadow: 1px 1px 1px 0 rgb(255, 255, 255),
-    -1px -1px 1px 0 rgba(119, 119, 119, 0.801);
+  background: var(--main);
+  box-shadow: 1px 1px 1px 0 var(--shadow-light),
+    -1px -1px 1px 0 var(--shadow-dark);
 }
 
 .description::before {
-  width: 75%;
-  top: -5px;
+  top: -2px;
 }
 .description::after {
-  bottom: -5px;
-  width: 55%;
+  bottom: -11px;
 }
 
 .first,
@@ -124,9 +130,9 @@ body {
   height: 4px;
   width: 4px;
   border-radius: 50%;
-  box-shadow: 1px 1px 1px 0 rgb(255, 255, 255),
-    -1px -1px 1px 0 rgba(119, 119, 119, 0.801);
-  background: rgb(206, 206, 206);
+  box-shadow: 1px 1px 1px 0 var(--shadow-light),
+    -1px -1px 1px 0 var(--shadow-dark);
+  background: var(--main);
 }
 
 .first::before {
@@ -160,19 +166,20 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  gap: 15px;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1px;
+  padding-right: 15px;
   text-align: center;
 }
 
 .email,
 .phone,
 .location {
-  flex: 1;
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  flex-direction: row-reverse;
   align-items: center;
+  gap: 10px;
   width: 100%;
 }
 
@@ -182,11 +189,11 @@ body {
 
 .material-symbols-outlined,
 .text {
-  color: rgb(206, 206, 206);
-  text-shadow: -1px -1px 1px rgb(94, 94, 94), 1px 1px 1px rgb(255, 255, 255);
+  color: var(--main);
+  text-shadow: -1px -1px 1px var(--shadow-dark), 1px 1px 1px var(--shadow-light);
   font-size: 1.5rem;
-  font-weight: 200;
-  letter-spacing: 2px;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .text {
